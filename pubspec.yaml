@@ -1,0 +1,36 @@
+name: troso
+description: Troso mobile app
+
+publish_to:
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  firebase_core: ^1.14.0
+  firebase_auth: ^3.3.12
+  cloud_firestore: ^3.1.11
+  provider: ^6.0.2
+  json_annotation: ^4.4.0
+  http: 0.13.4
+  flutter_stripe: ^2.4.0
+  cached_network_image: ^3.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  json_serializable: ^6.1.5
+  build_runner: ^2.1.8
+
+flutter:
+
+  uses-material-design: true
+

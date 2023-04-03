@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "533367652930",
+    "project_id": "troso-282fb",
+    "storage_bucket": "troso-282fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533367652930:android:5eebb229fcf645ac7223db",
+        "android_client_info": {
+          "package_name": "com.mobi.troso"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533367652930-l2kmq1mcetlubk79kdmu8h2imvtr2ge5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFg-3tGcIRGGceAxjqEVOjGYOWO0kMacg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533367652930-l2kmq1mcetlubk79kdmu8h2imvtr2ge5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
