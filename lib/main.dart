@@ -7,6 +7,8 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:provider/provider.dart';
 import 'package:troso/firebase_options.dart';
 import 'package:troso/screens/login.dart';
+import 'package:troso/screens/museum.dart';
+import 'package:troso/screens/review.dart';
 import 'screens/checkout.dart';
 import 'screens/home.dart';
 import 'screens/profile.dart';
@@ -56,7 +58,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 5,
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -76,8 +78,10 @@ class MyApp extends StatelessWidget {
             indicatorColor: Colors.transparent,
             tabs: [
               Tab(icon: Icon(Icons.home)),
-              Tab(icon: Icon(Icons.person)),
+              Tab(icon: Icon(Icons.location_on)),
               Tab(icon: Icon(Icons.shopping_cart)),
+              Tab(icon: Icon(Icons.preview)),
+              Tab(icon: Icon(Icons.museum)),
             ],
           ),
         ),
@@ -86,6 +90,8 @@ class MyApp extends StatelessWidget {
             HomeScreen(),
             ProfileScreen(),
             CheckOutScreen(),
+            ReviewScreen(),
+            MuseumScreen(),
           ],
         ),
       ),

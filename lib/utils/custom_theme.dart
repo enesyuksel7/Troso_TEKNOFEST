@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomTheme {
-  static const Color grey = Color(0xFF33691E);
-  static const Color yellow = Color(0xFFFFFF00);
+  static const Color grey = Color(0xFF105F5F);
+  static const Color yellow = Color(0xFF26BACB);
   static const cardShadow = [
     BoxShadow(color: grey, blurRadius: 6, spreadRadius: 4, offset: Offset(0, 2))
   ];

@@ -31,7 +31,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
            priceFooter(),
            Container(padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
            child: CustomButton(
-             text: "CHECKOUT",
+             text: "ÖDEME YAP",
              onPress: (){}, loading: false,
 
            ),
@@ -58,7 +58,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               padding: const EdgeInsets.only( top:20),
           child : Row(
             children: [
-              Text("Total:", style: Theme.of(context).textTheme.headlineSmall),
+              Text("Toplam:", style: Theme.of(context).textTheme.headlineSmall),
               const Spacer(),
               Text("\$ price ", style: Theme.of(context).textTheme.headlineSmall,)
             ],

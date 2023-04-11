@@ -21,6 +21,9 @@ dependencies:
   http: 0.13.4
   flutter_stripe: ^2.4.0
   cached_network_image: ^3.2.0
+  tflite_flutter: ^0.8.0
+  google_fonts: ^2.3.2
+  flutter_cube: ^0.1.1
 
 dev_dependencies:
   flutter_test:
@@ -35,7 +38,15 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/
+    - assets/jet/Jet.obj
+    - assets/shark/shark.obj
     - assets/config/stripe.json
+    - assets/images/images1.jpg
+    - assets/images/images2.jpg
+    - assets/images/images3.jpg
+    - assets/images/images4.jpg
+    - assets/images/images5.jpg
 
   fonts:
     - family: DMSans

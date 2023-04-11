@@ -1,15 +1,15 @@
 class LoginData {
   static Map<String, String> signUp= {
     "heading":"TROSO UYGULAMASINA HOŞGELDİNN",
-    "subHeading": "Creaate ab account to continue",
+    "subHeading": "Bir hesap oluştur.",
     "label": "ÜYE OL",
-    "footer": "Already have an account? Sign In"
+    "footer": "Zaten hesabın mı var? Oturum Aç"
   };
 
   static Map<String, String> signIn = {
     "heading":"TROSO UYGULAMASINA HOŞGELDİN",
-    "subHeading": "Use your account email and password",
+    "subHeading": "E-Posta ve parola ile giriş yap.",
     "label": "OTURUM AÇ",
-    "footer": "Create a new account? Sign Up"   
+    "footer": "Hesabın mı yok? Kaydol"
   };
 }

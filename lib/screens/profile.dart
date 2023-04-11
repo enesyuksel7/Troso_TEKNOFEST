@@ -28,12 +28,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [Padding(padding: EdgeInsets.only(bottom: 20),
       child: Text(
-        "Hi there",
+        "Merhaba müşteri,",
         style: Theme.of(context).textTheme.headlineLarge,
       ),
       ),
         //Custom button kodları gelecekkk
-        CustomButton(text: "Sign Out", onPress: signOutButtonPressed, loading: _loadingButton,),
+        CustomButton(text: "Çıkış Yap", onPress: signOutButtonPressed, loading: _loadingButton,),
       ],
     ),
     );
