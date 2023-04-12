@@ -34,7 +34,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView.count(
-        crossAxisCount: 2,,
+        crossAxisCount: 2,
         children: cardItems.map((card) {
           return InkWell(
             onTap: () {

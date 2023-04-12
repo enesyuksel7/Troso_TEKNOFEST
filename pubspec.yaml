@@ -24,6 +24,7 @@ dependencies:
   tflite_flutter: ^0.8.0
   google_fonts: ^2.3.2
   flutter_cube: ^0.1.1
+  quickalert: ^1.0.1
 
 dev_dependencies:
   flutter_test:

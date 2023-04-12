@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:troso/firebase_options.dart';
 import 'package:troso/screens/login.dart';
 import 'package:troso/screens/museum.dart';
+import 'package:troso/screens/museums/allmuseums.dart';
 import 'package:troso/screens/review.dart';
 import 'screens/checkout.dart';
 import 'screens/home.dart';
@@ -91,7 +92,7 @@ class MyApp extends StatelessWidget {
             ProfileScreen(),
             CheckOutScreen(),
             ReviewScreen(),
-            MuseumScreen(),
+            AllMuseumsPage(),
           ],
         ),
       ),
