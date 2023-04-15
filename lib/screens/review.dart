@@ -10,158 +10,101 @@ class ReviewScreen extends StatefulWidget {
   State<ReviewScreen> createState() => _ReviewScreenState();
 }
 
-class CardItem {
-  final String title;
-  final String imagePath;
-  final String routeName;
-
-  CardItem({required this.title, required this.imagePath, required this.routeName});
-}
-
-final List<CardItem> cardItems = [
-  CardItem(title: "Kart 1", imagePath: "assets/images/images1.jpg", routeName: "/page1"),
-  CardItem(title: "Kart 2", imagePath: "assets/images/images2.jpg", routeName: "/page2"),
-  CardItem(title: "Kart 3", imagePath: "assets/images/images3.jpg", routeName: "/page3"),
-  CardItem(title: "Kart 4", imagePath: "assets/images/images4.jpg", routeName: "/page4"),
-  CardItem(title: "Kart 5", imagePath: "assets/images/images5.jpg", routeName: "/page5"),
-];
-
 class _ReviewScreenState extends State<ReviewScreen> {
 
-  final List<String> modelPaths = [    "assets/jet/Jet.obj",    "assets/shark/shark.obj",    "assets/jet/Jet.obj",    "assets/shark/shark.obj"  ];
+  List<Map<String, dynamic>> cards = [
+    {
+      'title': 'Kart Başlık 1',
+      'description': 'Kart Açıklama 1',
+      'image': 'https://picsum.photos/200/300',
+      'route': '/page1',
+    },
+    {
+      'title': 'Kart Başlık 2',
+      'description': 'Kart Açıklama 2',
+      'image': 'https://picsum.photos/200/300',
+      'route': '/page2',
+    },
+    {
+      'title': 'Kart Başlık 3',
+      'description': 'Kart Açıklama 3',
+      'image': 'https://picsum.photos/200/300',
+      'route': '/page3',
+    },
+    {
+      'title': 'Kart Başlık 4',
+      'description': 'Kart Açıklama 4',
+      'image': 'https://picsum.photos/200/300',
+      'route': '/page4',
+    },
+    {
+      'title': 'Kart Başlık 5',
+      'description': 'Kart Açıklama 5',
+      'image': 'https://picsum.photos/200/300',
+      'route': '/page5',
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GridView.count(
-        crossAxisCount: 2,
-        children: cardItems.map((card) {
-          return InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, card.routeName);
-            },
-            child: Hero(
-              tag: card.title,
-              child: Card(
-                elevation: 4,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset(
-                      card.imagePath,
-                      fit: BoxFit.contain,
-                      height: 120,
+      appBar: AppBar(
+        title: Text('Kart Örneği'),
+      ),
+      body: ListView.builder(
+        itemCount: cards.length,
+        itemBuilder: (context, index) {
+          return Card(
+            elevation: 4.0,
+            margin: EdgeInsets.all(8.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).pushNamed(cards[index]['route']);
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Container(
+                    height: 200.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(cards[index]['image']),
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                    Text(
-                      card.title,
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          cards[index]['title'],
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(height: 8.0),
+                        Text(
+                          cards[index]['description'],
+                          style: TextStyle(fontSize: 16.0),
+                        ),
+                        SizedBox(height: 8.0),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).pushNamed(cards[index]['route']);
+                          },
+                          child: Text('Detay'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           );
-        }).toList(),
-      ),
-    );
-  }
-}
-
-class Page1 extends StatelessWidget {
-  const Page1({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Sayfa 1")),
-      body: Container(
-        color: Colors.blueGrey,
-        child: Center(
-          child: Hero(
-            tag: "Kart 1",
-            child: Image.asset("assets/images/image1.jpg", fit: BoxFit.cover),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Page2 extends StatelessWidget {
-  const Page2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Sayfa 2")),
-      body: Container(
-        color: Colors.blueGrey,
-        child: Center(
-          child: Hero(
-            tag: "Kart 2",
-            child: Image.asset("assets/images/image2.jpg", fit: BoxFit.cover),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Page3 extends StatelessWidget {
-  const Page3({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Sayfa 3")),
-      body: Container(
-        color: Colors.blueGrey,
-        child: Center(
-          child: Hero(
-            tag: "Kart 3",
-            child: Image.asset("assets/images/image3.jpg", fit: BoxFit.cover),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Page4 extends StatelessWidget {
-  const Page4({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Sayfa 4")),
-      body: Container(
-        color: Colors.blueGrey,
-        child: Center(
-          child: Hero(
-            tag: "Kart 4",
-            child: Image.asset("assets/images/image4.jpg", fit: BoxFit.cover),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Page5 extends StatelessWidget {
-  const Page5({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Sayfa 5")),
-      body: Container(
-        color: Colors.blueGrey,
-        child: Center(
-          child: Hero(
-            tag: "Kart 5",
-            child: Image.asset("assets/images/image5.jpg", fit: BoxFit.cover),
-          ),
-        ),
+        },
       ),
     );
   }

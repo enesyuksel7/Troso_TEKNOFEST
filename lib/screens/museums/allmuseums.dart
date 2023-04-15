@@ -9,22 +9,28 @@ class AllMuseumsPage extends StatefulWidget {
 }
 
 class _AllMuseumsPageState extends State<AllMuseumsPage> {
+
+  DateTime tomorrow = DateTime.now().add(Duration(days: 1));
+
   @override
   Widget build(BuildContext context) {
+    String formattedDate = "${tomorrow.day}.${tomorrow.month}.${tomorrow.year}";
+
     // success Alert
     final successAlert = buildButton(
       onTap: () {
         QuickAlert.show(
           context: context,
           type: QuickAlertType.success,
-          text: 'Form Submitted Successfully!',
+          title: 'Hesaplanıyor..',
+          text: 'Tahmini Kişi Sayısı: 1453',
         );
       },
-      title: 'Success',
-      text: 'Transaction Completed Successfully!',
+      title: 'AYASOFYA CAMİ',
+      text: "Yarın: "+formattedDate.toString(),
       leadingIcon: Icon(
-        Icons.check_circle,
-        color: Colors.green,
+        Icons.mosque,
+        color: Colors.brown,
       ),
     );
 
@@ -34,15 +40,15 @@ class _AllMuseumsPageState extends State<AllMuseumsPage> {
         QuickAlert.show(
           context: context,
           type: QuickAlertType.loading,
-          title: 'Loading...',
+          title: 'AYASOFYA CAMİ',
           text: 'Please wait',
         );
       },
-      title: 'Loading',
-      text: 'Please Wait',
+      title: 'ANADOLU MEDENİYETLERİ MÜZESİ',
+      text: "Yarın: "+formattedDate.toString(),
       leadingIcon: Icon(
-        Icons.downloading,
-        color: Colors.greenAccent,
+        Icons.museum_outlined,
+        color: Colors.blueAccent,
       ),
     );
 
@@ -52,14 +58,14 @@ class _AllMuseumsPageState extends State<AllMuseumsPage> {
         QuickAlert.show(
           context: context,
           type: QuickAlertType.info,
-          title: 'New Offer',
-          text: 'Get Discount of 50% , On showing of Rs 5000',
+          title: 'Hesaplanıyor..',
+          text: 'Tahmini Kişi Sayısı: 1453',
         );
       },
-      title: 'Info',
-      text: 'Learn More..!',
+      title: 'GALATA KULESİ',
+      text: "Yarın: "+formattedDate.toString(),
       leadingIcon: Icon(
-        Icons.info,
+        Icons.pix,
         color: Colors.grey,
       ),
     );
@@ -76,10 +82,10 @@ class _AllMuseumsPageState extends State<AllMuseumsPage> {
           confirmBtnColor: Colors.green,
         );
       },
-      title: 'Confirm',
-      text: 'Do you want to logout',
+      title: 'TOPKAPI SARAYI',
+      text: "Yarın: "+formattedDate.toString(),
       leadingIcon: Icon(
-        Icons.logout,
+        Icons.castle_outlined,
         color: Colors.orange,
       ),
     );
@@ -94,20 +100,22 @@ class _AllMuseumsPageState extends State<AllMuseumsPage> {
           text: 'Please wait',
         );
       },
-      title: 'Loading',
-      text: 'Please Wait',
+      title: 'ŞEREFİYE SARNICI',
+      text: "Yarın: "+formattedDate.toString(),
       leadingIcon: Icon(
-        Icons.downloading,
-        color: Colors.greenAccent,
+        Icons.pages,
+        color: Colors.green,
       ),
     );
 
     return Scaffold(
-      backgroundColor: Colors.black54,
-      body: Center(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+        child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.network('https://miro.medium.com/v2/resize:fit:425/1*cWFpj7Fp3BgLRC-fz5KUpw.gif'),
             successAlert,
             SizedBox(
               height: 20,
@@ -125,20 +133,10 @@ class _AllMuseumsPageState extends State<AllMuseumsPage> {
               height: 20,
             ),
             loadingAlert2,
-            ElevatedButton(
-                onPressed: () {
-                  QuickAlert.show(
-                      context: context,
-                      type: QuickAlertType.success,
-                      title: "The Action was Successful",
-                      text: "Subscribe to Proto Coders Point",
-                      textColor: Colors.red,
-                      autoCloseDuration: Duration(seconds: 2));
-                },
-                child: Text("Show Success"))
           ],
         ),
       ),
+        ),
     );
   }
 }
@@ -153,10 +151,10 @@ Card buildButton({
   return Card(
     shape: const StadiumBorder(),
     margin: const EdgeInsets.symmetric(
-      horizontal: 20,
+      horizontal: 30,
     ),
     clipBehavior: Clip.antiAlias,
-    elevation: 1,
+    elevation: 5,
     child: ListTile(
       onTap: onTap,
       leading: leadingIcon,
