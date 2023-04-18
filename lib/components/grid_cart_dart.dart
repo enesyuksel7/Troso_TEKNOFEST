@@ -29,7 +29,7 @@ class GridCard extends StatelessWidget{
                     width: double.infinity,
                     child: CachedNetworkImage(
                       imageUrl:
-                          "https://cdn.teknofestmagaza.com/media/upload/userFormUpload/YgSIBxY5egXHVaBKbHhbYxgNub7oq8at.png",
+                          ,
                     fit: BoxFit.cover,
                     ),
                   )),

@@ -5,11 +5,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:provider/provider.dart';
+import 'package:troso/dronemap/screens/dronemap.dart';
 import 'package:troso/firebase_options.dart';
 import 'package:troso/screens/login.dart';
-import 'package:troso/screens/museum.dart';
-import 'package:troso/screens/museums/allmuseums.dart';
-import 'package:troso/screens/review.dart';
+import 'package:troso/screens/allmuseums.dart';
 import 'screens/checkout.dart';
 import 'screens/home.dart';
 import 'screens/profile.dart';
@@ -87,14 +86,15 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: const TabBarView(
+          physics: NeverScrollableScrollPhysics(), // Bu satırı ekleyin
           children: [
             HomeScreen(),
-            ProfileScreen(),
+            DroneMapScreen(),
             CheckOutScreen(),
-            ReviewScreen(),
+            ProfileScreen(),
             AllMuseumsPage(),
           ],
-        ),
+        )
       ),
     );
   }

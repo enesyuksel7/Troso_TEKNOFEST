@@ -40,7 +40,7 @@ class _AllMuseumsPageState extends State<AllMuseumsPage> {
         QuickAlert.show(
           context: context,
           type: QuickAlertType.loading,
-          title: 'AYASOFYA CAMİ',
+          title: 'sonuc',
           text: 'Please wait',
         );
       },
@@ -116,23 +116,87 @@ class _AllMuseumsPageState extends State<AllMuseumsPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.network('https://miro.medium.com/v2/resize:fit:425/1*cWFpj7Fp3BgLRC-fz5KUpw.gif'),
-            successAlert,
-            SizedBox(
-              height: 20,
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 2, color: Colors.orangeAccent),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: Text(
+                'Yarınki ziyaretçi sayısını tahminen görmek istediğiniz yeri seçiniz:',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 10,
+                ),
+              ),
             ),
+            SizedBox(height: 15),
+            successAlert,
+            SizedBox(height: 10),
+            Container(
+              height: 130,
+              width: 190,
+              decoration: BoxDecoration(
+                border: Border.all(width: 5, color: Colors.brown),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Image.network('https://www.gezilecektarihiyerler.com/wp-content/uploads/ayasofya-bilinmeyen-tarihi-hakkinda-bilgi-gizli-sirlari.jpg',
+              ),
+            ),
+            SizedBox(height: 10),
             loadingAlert1,
-            SizedBox(
-              height: 20,
+            SizedBox(height: 10),
+            Container(
+              height: 130,
+              width: 190,
+              decoration: BoxDecoration(
+                border: Border.all(width: 5, color: Colors.blue),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Image.network('https://www.gezilecektarihiyerler.com/wp-content/uploads/ayasofya-bilinmeyen-tarihi-hakkinda-bilgi-gizli-sirlari.jpg',
+              ),
             ),
             infoAlert,
-            SizedBox(
-              height: 20,
+            SizedBox(height: 10),
+            Container(
+              height: 130,
+              width: 190,
+              decoration: BoxDecoration(
+                border: Border.all(width: 5, color: Colors.grey),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Image.network('https://www.gezilecektarihiyerler.com/wp-content/uploads/ayasofya-bilinmeyen-tarihi-hakkinda-bilgi-gizli-sirlari.jpg',
+              ),
             ),
+            SizedBox(height: 10),
             confirmAlert,
+            SizedBox(height: 10),
+            Container(
+              height: 130,
+              width: 190,
+              decoration: BoxDecoration(
+                border: Border.all(width: 5, color: Colors.deepOrangeAccent),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Image.network('https://www.gezilecektarihiyerler.com/wp-content/uploads/ayasofya-bilinmeyen-tarihi-hakkinda-bilgi-gizli-sirlari.jpg',
+              ),
+            ),
             SizedBox(
               height: 20,
             ),
             loadingAlert2,
+            SizedBox(height: 10),
+            Container(
+              height: 130,
+              width: 190,
+              decoration: BoxDecoration(
+                border: Border.all(width: 5, color: Colors.green),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Image.network('https://www.gezilecektarihiyerler.com/wp-content/uploads/ayasofya-bilinmeyen-tarihi-hakkinda-bilgi-gizli-sirlari.jpg',
+              ),
+            ),
+            SizedBox(height: 30),
           ],
         ),
       ),
@@ -151,7 +215,7 @@ Card buildButton({
   return Card(
     shape: const StadiumBorder(),
     margin: const EdgeInsets.symmetric(
-      horizontal: 30,
+      horizontal: 35,
     ),
     clipBehavior: Clip.antiAlias,
     elevation: 5,

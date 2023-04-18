@@ -23,8 +23,8 @@ dependencies:
   cached_network_image: ^3.2.0
   tflite_flutter: ^0.8.0
   google_fonts: ^2.3.2
-  flutter_cube: ^0.1.1
   quickalert: ^1.0.1
+  flutter_map: ^0.14.0
 
 dev_dependencies:
   flutter_test:
@@ -40,8 +40,6 @@ flutter:
 
   assets:
     - assets/
-    - assets/jet/Jet.obj
-    - assets/shark/shark.obj
     - assets/config/stripe.json
     - assets/images/images1.jpg
     - assets/images/images2.jpg
